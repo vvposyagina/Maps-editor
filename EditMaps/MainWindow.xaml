@@ -1,0 +1,36 @@
+﻿<Window x:Name="EditMaps" x:Class="EditMaps.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="553" Width="763">
+    <Grid x:Name="Window" Margin="0,0,-8,-163">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="232*"/>
+            <ColumnDefinition Width="479*"/>
+            <ColumnDefinition Width="42*"/>
+        </Grid.ColumnDefinitions>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="{Binding ElementName=Window, Mode=OneWay}" VerticalAlignment="Top" Width="{DynamicResource {x:Static SystemParameters.PrimaryScreenWidthKey}}" Grid.ColumnSpan="3" Margin="0,0,-603,0">
+            <MenuItem x:Name="file" Header="Файл" Width="68">
+                <MenuItem x:Name="create" Header="Создать" Click="create_Click"/>
+                <MenuItem x:Name="open" Header="Открыть" Click="open_Click"/>
+                <MenuItem x:Name="save" Header="Сохранить" Click="save_Click" IsEnabled="False"/>
+            </MenuItem>
+            <MenuItem x:Name="reference" Width="68" Header="Справка"/>
+        </Menu>
+        <TextBox x:Name="height" HorizontalAlignment="Left" Height="23" Margin="38,89,0,0" TextWrapping="Wrap" Text="Высота" VerticalAlignment="Top" Width="58" IsEnabled="False"/>
+        <TextBox x:Name="width" HorizontalAlignment="Left" Height="21" Margin="38,117,0,0" TextWrapping="Wrap" Text="Ширина" VerticalAlignment="Top" Width="58" IsEnabled="False"/>
+        <Button x:Name="createField" Content="Создать поле" HorizontalAlignment="Left" Margin="38,189,0,0" VerticalAlignment="Top" Width="90" IsEnabled="False" Click="createField_Click" Height="20"/>
+        <ScrollViewer x:Name="scrollForCanvas" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" IsEnabled="False" Grid.Column="1" Margin="82,89,32,261">
+            <Canvas x:Name="canvasForField" HorizontalAlignment="Left" Grid.Column="2"/>
+        </ScrollViewer>
+        <Button x:Name="clearField" Content="Очистить" HorizontalAlignment="Left" Margin="38,233,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="0.387,0.227" IsEnabled="False" Click="clearField_Click" Height="20"/>
+        <Menu x:Name="brushes" HorizontalAlignment="Left" Height="110" Margin="38,333,0,0" VerticalAlignment="Top" Width="97" IsEnabled="False">
+            <Button x:Name="wall" Content="Стена" Click="wall_Click" Width="78"/>
+            <Button x:Name="player" Content="Игрок" Click="player_Click" Width="77"/>
+            <Button x:Name="exit" Content="Выход" Click="exit_Click" Width="77"/>
+            <Button x:Name="empty" Content="Пусто" Width="77" Click="empty_Click"/>
+        </Menu>
+        <TextBox x:Name="time" HorizontalAlignment="Left" Height="23" Margin="38,143,0,0" TextWrapping="Wrap" Text="Время" VerticalAlignment="Top" Width="58" IsEnabled="False"/>
+        <Button x:Name="checkСonnectivity" Content="Проверить на связность" HorizontalAlignment="Left" Margin="38,277,0,0" VerticalAlignment="Top" Width="159" Click="checkСonnectivity_Click" IsEnabled="False" Height="20"/>
+        <Label Content="Чтобы построить стену, удерживайте правую кнопку&#xD;&#xA;мыши на начальной точке и &#xA;протяните стену по вертикали или горинтали." HorizontalAlignment="Left" Margin="82,449,0,0" VerticalAlignment="Top" Grid.Column="1" Width="371" Height="77"/>
+    </Grid>
+</Window>

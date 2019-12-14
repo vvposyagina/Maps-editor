@@ -1,0 +1,12 @@
+﻿<Window x:Class="EditMaps.InfoAfterCheck"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="InfoAfterCheck" Height="305.97" Width="300">
+    <Grid>
+        <Label Content="Точки, из которых нет выхода:" HorizontalAlignment="Left" Margin="36,31,0,0" VerticalAlignment="Top"/>
+        <ScrollViewer x:Name="scrollForPoints" HorizontalAlignment="Left" Height="189" Margin="36,76,0,0" VerticalAlignment="Top" Width="178">
+            <Label x:Name="points" Content="" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </ScrollViewer>
+
+    </Grid>
+</Window>
